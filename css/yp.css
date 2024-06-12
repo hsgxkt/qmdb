@@ -1,0 +1,7 @@
+.audio-controls {
+            position: fixed;
+            bottom: 10px;
+            left: 33px;
+            text-align: left; /* 确保按钮显示在左侧 */
+            z-index: 1000; /* 确保按钮显示在最上层 */
+        }
