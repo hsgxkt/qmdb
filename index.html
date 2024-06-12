@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title>明日世界窗</title>
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<meta content="" name="keywords">
+		<meta content="" name="description">
+		<!-- Google Web 字体 -->
+		<!--   <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:wght@100;600;800&display=swap" rel="stylesheet"> -->
+		<!-- 图标字体样式表 -->
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+		<!-- 库样式表 -->
+		<!-- <link href="lib/animate/animate.min.css" rel="stylesheet"> -->
+		<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+		<!-- 自定义 Bootstrap 样式表 -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- 模板样式表 -->
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="shortcut icon" href="img/tx.jpg" type="image/x-icon">
+		<style>
+			/* 弹窗 */
+			.ad {
+				position: fixed;
+				right: 0;
+				bottom: 0;
+				width: 400px;
+				height: 200px;
+				background-image: url(img/t.gif);
+				display: block;
+				/* 假设你想要显示这个广告 */
+				z-index: 1;
+				/* 设置一个基础的z-index值，确保.ad本身也在其他元素之上 */
+			}
+
+			.ad span {
+				position: absolute;
+				right: 10px;
+				/* 稍微向内偏移，确保不在.ad的边界上 */
+				top: 10px;
+				/* 同样稍微向内偏移 */
+				width: 40px;
+				height: 40px;
+				background-image: url(img/lianxi2.png);
+				background-size: cover;
+				/* 确保背景图片覆盖整个span元素 */
+				background-position: center;
+				/* 确保背景图片在span元素中居中 */
+				cursor: pointer;
+				z-index: 8888;
+				/* 确保span在堆叠顺序中处于高位 */
+			}
+
+			#pic1 {
+				position: absolute;
+				z-index: 9999;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<!-- 微调器启动 -->
+		<!--   <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div> -->
+		<!-- 微调端 -->
+
+
+		<!--导航栏开始 -->
+		<div class="container-fluid sticky-top px-0">
+			<div class="container-fluid topbar bg-dark d-none d-lg-block">
+				<div class="container px-0">
+					<div class="topbar-top d-flex justify-content-between flex-lg-wrap">
+						<div class="top-info flex-grow-0">
+							<span class="rounded-circle btn-sm-square bg-primary me-2">
+								<img src="img/tx.jpg" class="rounded-circle" style="height:3rem;">
+							</span>
+							<div class="pe-2 me-3 border-end border-white d-flex align-items-center">
+								<p class="mb-0 text-white fs-6 fw-normal">周涛</p>
+							</div>
+							<div class="overflow-hidden" style="width: 700px;">
+								<div id="note" class="ps-2">
+									<img src="img/tx.jpg"
+										class="img-fluid rounded-circle border border-3 border-primary me-2"
+										style="width: 30px; height: 30px;" alt="">
+									<a href="#">
+										<p class="text-white mb-0 link-hover">欢迎你访问我的个人博客，希望你能够有所收获！</p>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="top-link flex-lg-wrap">
+							<i class="fas fa-calendar-alt text-white border-end border-secondary pe-2 me-2">
+								<span id="currentDate" class="text-body"></span>
+							</i>
+							<div class="d-flex icon">
+								<p class="mb-0 text-white me-2">明日已来,世界尽在窗外!</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-fluid bg-light">
+				<div class="container px-0">
+					<nav class="navbar navbar-light navbar-expand-xl">
+						<a href="https://hsgxkt.github.io/qmdb" class="navbar-brand mt-1">
+							<p class="text-primary display-6 mb-1" style="line-height: 0; font-family:华文新魏;">明 日 世 界 窗
+							</p>
+
+						</a>
+						<button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
+							data-bs-target="#navbarCollapse">
+							<span class="fa fa-bars text-primary"></span>
+						</button>
+						<div class="collapse navbar-collapse bg-light py-3" id="navbarCollapse">
+							<div class="navbar-nav mx-auto border-top">
+								<a href="index.html" class="nav-item nav-link active">首页</a>
+								<a href="haerbin.html" class="nav-item nav-link">冰城尔滨</a>
+								<a href="beijing.html" class="nav-item nav-link">首都北京</a>
+								<a href="liaoning.html" class="nav-item nav-link">多彩辽宁</a>
+								<div class="nav-item dropdown">
+									<a href="qxlc.html" class="nav-link dropdown-toggle"
+										data-bs-toggle="dropdown">求学历程</a>
+									<div class="dropdown-menu m-0 bg-secondary rounded-0">
+										<!-- <a href="#" class="dropdown-item">高中阶段</a> -->
+										<a href="qxlc.html" class="dropdown-item">大学阶段</a>
+										<!-- <a href="#" class="dropdown-item">社会阶段</a> -->
+										<a href="zx.html" class="dropdown-item">致 谢</a>
+									</div>
+								</div>
+
+							</div>
+							<div class="d-flex flex-nowrap border-top pt-3 pt-xl-0">
+								<div class="d-flex">
+									<img src="img/weather-icon.png" class="img-fluid w-100 me-2" alt="">
+									<div class="d-flex align-items-center">
+										<strong class="fs-4 text-secondary">31°C</strong>
+										<div class="d-flex flex-column ms-2" style="width: 150px;">
+											<span class="text-body">黑龙江</span>
+											<small id="dateDisplay" class="text-black">周一 10 6月 2024</small>
+
+										</div>
+									</div>
+								</div>
+								<button
+									class="btn-search btn border border-primary btn-md-square rounded-circle bg-white my-auto"
+									data-bs-toggle="modal" data-bs-target="#searchModal"><i
+										class="fas fa-search text-primary"></i></button>
+							</div>
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- 轮播图部分 -->
+		<!-- 	<div id="example" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000"> -->
+		<div class="container-fluidx">
+			<div id="example" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#example" data-bs-slide-to="0" class="active"
+						aria-current="true" aria-label="Slide 1"></button>
+					<button type="button" data-bs-target="#example" data-bs-slide-to="1" aria-label="Slide 2"></button>
+					<button type="button" data-bs-target="#example" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner">
+					<div class="carousel-item active">
+						<img src="img/gw1.jpg" class="d-block w-100 h-50 img-zoomin" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="img/gw2.jpg" class="d-block w-100 h-50 img-zoomin" alt="...">
+					</div>
+					<div class="carousel-item">
+						<img src="img/gw3.jpg" class="d-block w-100 h-50 img-zoomin" alt="...">
+					</div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#example" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#example" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				</button>
+			</div>
+		</div>
+		
+
+
+		<!-- 最新消息开始 -->
+		<div class="container-fluid latest-news py-1">
+			<div class="container py-3">
+				<h2 class="mb-4"> 时政新闻</h2>
+				<div class="latest-news-carousel owl-carousel">
+					<div class="latest-news-item">
+						<div class="bg-light rounded">
+							<div class="rounded-top overflow-hidden">
+								<img src="img/news-7.jpg" class="img-zoomin img-fluid rounded-top w-100 h-50" alt="">
+							</div>
+							<div class="d-flex flex-column p-4">
+								<a href="https://www.xuexi.cn/lgpage/detail/index.html?id=16931501835452250007&item_id=16931501835452250007"
+									class="h4">习近平总书记在山东省日照市考察调研</a>
+								<div class="d-flex justify-content-between">
+									<a href="https://www.xuexi.cn/lgpage/detail/index.html?id=16931501835452250007&item_id=16931501835452250007"
+										class="small text-body link-hover">来源:学习强国</a>
+									<small class="text-body d-block"><i
+											class="fas fa-calendar-alt me-1"></i>2024-05-24</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="latest-news-item">
+						<div class="bg-light rounded">
+							<div class="rounded-top overflow-hidden">
+								<img src="img/news-6.jpg" class="img-zoomin img-fluid rounded-top w-100 h-50" alt="">
+							</div>
+							<div class="d-flex flex-column p-4">
+								<a href="https://www.xuexi.cn/lgpage/detail/index.html?id=3314872793216178433&item_id=3314872793216178433"
+									class="h4">习近平：老百姓的幸福生活是干出来的</a>
+								<div class="d-flex justify-content-between">
+									<a href="https://www.xuexi.cn/lgpage/detail/index.html?id=3314872793216178433&item_id=3314872793216178433"
+										class="small text-body link-hover">来源:学习强国</a>
+									<small class="text-body d-block"><i
+											class="fas fa-calendar-alt me-1"></i>2024-05-23</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="latest-news-item">
+						<div class="bg-light rounded">
+							<div class="rounded-top overflow-hidden">
+								<img src="img/news-3.jpg" class="img-zoomin img-fluid rounded-top w-100 h-50" alt="">
+							</div>
+							<div class="d-flex flex-column p-4">
+								<a href="https://www.xuexi.cn/lgpage/detail/index.html?id=805311690502756086&item_id=805311690502756086"
+									class="h4">习近平同俄罗斯总统普京共同会见记者</a>
+								<div class="d-flex justify-content-between">
+									<a href="https://www.xuexi.cn/lgpage/detail/index.html?id=805311690502756086&item_id=805311690502756086"
+										class="small text-body link-hover">来源:学习强国</a>
+									<small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i>
+										来源:学习强国</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="latest-news-item">
+						<div class="bg-light rounded">
+							<div class="rounded-top overflow-hidden">
+								<img src="img/news-4.jpg" class="img-zoomin img-fluid rounded-top w-100 h-50" alt="">
+							</div>
+							<div class="d-flex flex-column p-4">
+								<a href="https://www.xuexi.cn/lgpage/detail/index.html?id=18416914370269840496&item_id=18416914370269840496"
+									class="h4">习近平同俄罗斯总统普京在中南海小范围会晤</a>
+								<div class="d-flex justify-content-between">
+									<a href="https://www.xuexi.cn/lgpage/detail/index.html?id=18416914370269840496&item_id=18416914370269840496"
+										class="small text-body link-hover">来源:学习强国</a>
+									<small class="text-body d-block"><i class="fas fa-calendar-alt me-1"></i>
+										2024-05-17</small>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="latest-news-item">
+						<div class="bg-light rounded">
+							<div class="rounded-top overflow-hidden">
+								<img src="img/news-5.jpg" class="img-zoomin img-fluid rounded-top w-100 h-50" alt="">
+							</div>
+							<div class="d-flex flex-column p-4">
+								<a href="https://www.xuexi.cn/lgpage/detail/index.html?id=16493080055809573775&item_id=16493080055809573775"
+									class="h4 ">习近平同匈牙利总理欧尔班共同会见记者</a>
+								<div class="d-flex justify-content-between">
+									<a href="https://www.xuexi.cn/lgpage/detail/index.html?id=16493080055809573775&item_id=16493080055809573775"
+										class="small text-body link-hover">来源:学习强国</a>
+									<small class="text-body d-block"><i
+											class="fas fa-calendar-alt me-1"></i>2024-05-10</small>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- 大学 -->
+		<div class="container-fluid py-3">
+			<div class="container py-3">
+				<div class="row g-4">
+					<div class="col-lg-7 col-xl-8 mt-0">
+						<div class="position-relative overflow-hidden rounded">
+							<img src="img/news-1.jpg" class="img-fluid rounded img-zoomin w-100" alt="">
+							<div class="d-flex justify-content-center px-4 position-absolute flex-wrap"
+								style="bottom: 10px; left: 0;">
+								<a href="#" class="text-white me-3 link-hover"><i class="fa fa-clock"></i>06分钟阅读</a>
+								<a href="#" class="text-white me-3 link-hover"><i class="fa fa-eye"></i> 3.5k 浏览</a>
+								<a href="#" class="text-white me-3 link-hover"><i class="fa fa-comment-dots"></i> 05
+									评论</a>
+								<a href="#" class="text-white link-hover"><i class="fa fa-arrow-up"></i>1.5k 分享</a>
+							</div>
+						</div>
+						<div class="border-bottom py-3">
+							<a href="qxlc.html" class="display-4 text-dark mb-0 link-hover">大学阶段</a>
+						</div>
+						<p class="mt-3 mb-4">
+							大学阶段是人生中的一个重要阶段，它不仅是获取知识和技能的过程，也是培养个人能力和素质的关键时期。在大学，学生不仅学习专业知识和技能，还通过参与各种活动和社会实践，提高自己的综合素质，培养独立思考和解决问题的能力，为将来的职业生涯和社会生活做好准备。
+						</p>
+						<div class="bg-light p-4 rounded">
+							<div class="news-2">
+								<h3 class="mb-4">致 谢</h3>
+							</div>
+							<div class="row g-4 align-items-center">
+								<div class="col-md-6">
+									<div class="rounded overflow-hidden">
+										<img src="img/news-2.jpg" class="img-fluid rounded img-zoomin w-100" alt="">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="d-flex flex-column">
+										<a href="zx.html" class="h3">德技兼修 守正创新</a>
+										<p class="mb-0 fs-5"><i class="fa fa-clock">06分钟阅读</i> </p>
+										<p class="mb-0 fs-5"><i class="fa fa-eye">3.5k 浏览</i></p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-5 col-xl-4">
+						<div class="bg-light rounded p-4 pt-0">
+							<div class="row g-4">
+
+								<div class="col-12">
+									<div class="rounded overflow-hidden">
+										<img src="img/1-1.jpg" class="img-fluid rounded img-zoomin w-100" alt="">
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="d-flex flex-column">
+										<a href="http://www.hngzy.edu.cn/xyxw/10527" class="h4 mb-2">我院领导带队赴天津 北京考察学习
+											推进鲁班工坊项目建设</a>
+										<p class="fs-5 mb-0"><i class="fa fa-clock">06分钟阅读</i> </p>
+										<p class="fs-5 mb-0"><i class="fa fa-eye">3.5k 浏览</i></p>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="row g-4 align-items-center">
+										<div class="col-5">
+											<div class="overflow-hidden rounded">
+												<img src="img/1-2.jpg" class="img-zoomin img-fluid rounded w-100"
+													alt="">
+											</div>
+										</div>
+										<div class="col-7">
+											<div class="features-content d-flex flex-column">
+												<a href="http://www.hngzy.edu.cn/xyxw/10519"
+													class="h6">我院召开2024级人才培养方案编写说明会</a>
+												<small><i class="fa fa-clock">06分钟阅读</i> </small>
+												<small><i class="fa fa-eye">3.5k 浏览</i></small>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="row g-4 align-items-center">
+										<div class="col-5">
+											<div class="overflow-hidden rounded">
+												<img src="img/1-3.png" class="img-zoomin img-fluid rounded w-100"
+													alt="">
+											</div>
+										</div>
+										<div class="col-7">
+											<div class="features-content d-flex flex-column">
+												<a href="http://www.hngzy.edu.cn/xyxw/10517"
+													class="h6">我院举办知识产权宣讲培训会</a>
+												<small><i class="fa fa-clock">06分钟阅读</i> </small>
+												<small><i class="fa fa-eye">3.5k 浏览</i></small>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="row g-4 align-items-center">
+										<div class="col-5">
+											<div class="overflow-hidden rounded">
+												<img src="img/1-4.jpg" class="img-zoomin img-fluid rounded w-100"
+													alt="">
+											</div>
+										</div>
+										<div class="col-7">
+											<div class="features-content d-flex flex-column">
+												<a href="http://www.hngzy.edu.cn/xyxw/10514"
+													class="h6">我院召开2024年科研与社会服务工作会议</a>
+												<small><i class="fa fa-clock">06分钟阅读</i> </small>
+												<small><i class="fa fa-eye">3.5k 浏览</i></small>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="row g-4 align-items-center">
+										<div class="col-5">
+											<div class="overflow-hidden rounded">
+												<img src="img/1-6.jpg" class="img-zoomin img-fluid rounded w-100"
+													alt="">
+											</div>
+										</div>
+										<div class="col-7">
+											<div class="features-content d-flex flex-column">
+												<a href="http://www.hngzy.edu.cn/xyxw/10502"
+													class="h6">我院举办离退休教职工书画摄影作品展</a>
+												<small><i class="fa fa-clock">06分钟阅读</i> </small>
+												<small><i class="fa fa-eye">3.5k 浏览</i></small>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="row g-4 align-items-center">
+										<div class="col-5">
+											<div class="overflow-hidden rounded">
+												<img src="img/1-7.jpg" class="img-zoomin img-fluid rounded w-100"
+													alt="">
+											</div>
+										</div>
+										<div class="col-7">
+											<div class="features-content d-flex flex-column">
+												<a href="http://www.hngzy.edu.cn/xyxw/10493"
+													class="h6">我院举办重点岗位人群消防安全知识讲座</a>
+												<small><i class="fa fa-clock">06分钟阅读</i> </small>
+												<small><i class="fa fa-eye">3.5k 浏览</i></small>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="row g-4 align-items-center">
+										<div class="col-5">
+											<div class="overflow-hidden rounded">
+												<img src="img/1-8.jpg" class="img-zoomin img-fluid rounded w-100"
+													alt="">
+											</div>
+										</div>
+										<div class="col-7">
+											<div class="features-content d-flex flex-column">
+												<a href="http://www.hngzy.edu.cn/xyxw/10484"
+													class="h6">我院第二十四届田径运动会胜利闭幕</a>
+												<small><i class="fa fa-clock">06分钟阅读</i> </small>
+												<small><i class="fa fa-eye">3.5k 浏览</i></small>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- 页脚开始 -->
+		<div class="container-fluid bg-dark footer py-2  "> <!-- d-none d-lg-block -->
+			<div class="container py-2">
+				<div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+					<div class="row g-4">
+						<div class="col-lg-3">
+							<a href="#" class="d-flex flex-column flex-wrap">
+								<p class="text-white mb-0  py-2">黑龙江农业工程职业学院</p>
+								<small class="text-light py-2"
+									style="letter-spacing: 11px; line-height: 0;">信息工程学院</small>
+							</a>
+						</div>
+						<div class="col-lg-9  py-2">
+							<div class="d-flex position-relative rounded-pill overflow-hidden">
+								<input class="form-control border-0 w-100 py-3 rounded-pill" type="email"
+									placeholder="计算机网络技术22-6班">
+								<button type="submit"
+									class="btn btn-primary border-0 py-3 px-5 rounded-pill text-white position-absolute"
+									style="top: 0; right: 0;">立即搜索</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row g-5">
+					<div class="col-lg-6 col-xl-3">
+						<div class="footer-item-1">
+							<h4 class="mb-4 text-white">与我联系</h4>
+							<p class="text-secondary line-h">地址： <span class="text-white">哈尔滨市哈双路348号</span></p>
+							<p class="text-secondary line-h">Email: <span class="text-white">206****07744@126.com</span>
+							</p>
+							<p class="text-secondary line-h">电话： <span class="text-white">138*****627</span></p>
+							<div class="d-flex line-h">
+								<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+										class="bi bi-emoji-wink-fill"></i></a>
+								<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+										class="bi bi-wechat"></i></a>
+								<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+										class="bi bi-tencent-qq"></i></a>
+								<a class="btn btn-light btn-md-square rounded-circle" href=""><i
+										class="bi bi-tiktok"></i></a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-xl-3">
+						<div class="footer-item-2">
+							<div class="d-flex flex-column mb-4">
+								<h4 class="mb-4 text-white">团队成员</h4>
+								<a href="#">
+									<div class="d-flex align-items-center">
+										<div class="rounded-circle border border-2 border-primary overflow-hidden">
+											<img src="img/footer-1.jpg" class="img-zoomin  rounded-circle w-100" alt="">
+										</div>
+										<div class="d-flex flex-column ps-4">
+											<p class="text-uppercase text-white mb-3">站长</p>
+											<a href="#" class="h6 text-white">
+												负责网站的整体发展
+											</a>
+											<small class="text-white d-block"><i
+													class="bi bi-emoji-smile-fill"></i>让努力成为一种习惯!</small>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="d-flex flex-column">
+								<a href="#">
+									<div class="d-flex align-items-center">
+										<div class="rounded-circle border border-2 border-primary overflow-hidden">
+											<img src="img/footer-2.jpg" class="img-zoomin rounded-circle w-100" alt="">
+										</div>
+										<div class="d-flex flex-column ps-4">
+											<p class="text-uppercase text-white mb-3">管理员</p>
+											<a href="#" class="h6 text-white">
+												负责网站的维护与更新
+											</a>
+											<small class="text-white d-block"><i
+													class="bi bi-emoji-sunglasses-fill"></i>
+												越努力越幸运！</small>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6 col-xl-3">
+						<div class="d-flex flex-column text-start footer-item-3">
+							<h4 class="mb-4 text-white">友情链接</h4>
+							<a class="btn-link text-white" href="https://hsgxkt.github.io/Test/"><i
+									class="fas fa-angle-right text-white me-2"></i>
+								高校红色课堂网</a>
+							<a class="btn-link text-white" href="http://www.xinhuanet.com/"><i
+									class="fas fa-angle-right text-white me-2"></i>
+								新华社</a>
+							<a class="btn-link text-white" href="http://www.people.com.cn/"><i
+									class="fas fa-angle-right text-white me-2"></i>
+								人民日报</a>
+							<a class="btn-link text-white"
+								href="https://www.xuexi.cn/xxqg.html?id=3cba33e067d64ded8a1a503f0774675c"><i
+									class="fas fa-angle-right text-white me-2"></i>
+								学习强国</a>
+							<a class="btn-link text-white" href="https://www.ccps.gov.cn/"><i
+									class="fas fa-angle-right text-white me-2"></i>
+								中央党校</a>
+							<a class="btn-link text-white" href="https://www.huanqiu.com/"><i
+									class="fas fa-angle-right text-white me-2"></i>
+								环球时报</a>
+						</div>
+					</div>
+
+					<div class="col-lg-6 col-xl-3">
+						<div class="footer-item-4">
+							<h4 class="mb-4 text-white">时光记忆</h4>
+							<div class="row g-2">
+								<div class="col-4">
+									<div class="rounded overflow-hidden">
+										<img src="img/sy/2 (6).jpg" class="img-zoomin  rounded w-100" alt="">
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="rounded overflow-hidden">
+										<img src="img/sy/2 (4).jpg" class="img-zoomin  rounded w-100" alt="">
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="rounded overflow-hidden">
+										<img src="img/sy/2 (7).jpg" class="img-zoomin  rounded w-100" alt="">
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="rounded overflow-hidden">
+										<img src="img/sy/2 (13).jpg" class="img-zoomin  rounded w-100" alt="">
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="rounded overflow-hidden">
+										<img src="img/sy/2 (15).jpg" class="img-zoomin  rounded w-100" alt="">
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="rounded overflow-hidden">
+										<img src="img/sy/2 (17).jpg" class="img-zoomin  rounded w-100" alt="">
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="rounded overflow-hidden">
+										<img src="img/sy/2 (14).jpg" class="img-zoomin  rounded w-100" alt="">
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="rounded overflow-hidden">
+										<img src="img/sy/2 (9).jpg" class="img-zoomin  rounded w-100" alt="">
+									</div>
+								</div>
+								<div class="col-4">
+									<div class="rounded overflow-hidden">
+										<img src="img/sy/2 (18).jpg" class="img-zoomin  rounded w-100" alt="">
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+		<!-- 弹窗 -->
+		<div class="d-none d-lg-block">
+			<div class="ad">
+				<span></span>
+			</div>
+		</div>
+		<!-- 小脚丫 -->
+		<img src="img/foot.png" alt="" width="100px" id="pic1" class="d-none d-lg-block" />
+		<!-- 版权开始 -->
+		<div class="container-fluid copyright bg-dark py-3">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 text-center text-md-start mb-1 mb-md-0">
+						<span class="text-light"><i class="fas fa-copyright text-light me-2"></i>明日世界窗,
+							All right reserved.</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- JavaScript Libraries -->
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+		<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+		<script src="lib/easing/easing.min.js"></script>
+		<script src="lib/waypoints/waypoints.min.js"></script>
+		<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+		<!-- Template Javascript -->
+		<script src="js/main.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="js/x.js"></script>
+
+	</body>
+
+</html>
