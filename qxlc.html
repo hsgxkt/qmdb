@@ -315,7 +315,7 @@
 							<a href="#" class="h1 display-5">求学之路即将画上句号！</a>
 						</div>
 						<!-- 下拉列表 -->
-<div id="panel">
+						<div id="panel">
 							<p style="margin: 5px;color: #fff;line-height:46px;">&nbsp;&nbsp;&nbsp;&nbsp;
 								在这即将离别的时刻，让我们铭记心中的梦想，怀揣着对未来的期许，勇敢地迈向新的征程。无论前方的道路如何曲折，我们都要坚定信念，勇往直前。</p>
 						</div>
@@ -340,7 +340,7 @@
 							</video>
 						</div> -->
 
-						
+
 						<div class="accordion my-4">
 							<h3>知识的殿堂</h3>
 							<p>
@@ -547,7 +547,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
 									<div class="card">
 										<img src="img/qx/1 (15).jpg" class="card-img-top" alt="...">
@@ -557,226 +557,318 @@
 										</div>
 									</div>
 								</div>
-								
+
 							</div>
 						</div>
-						<div class="bg-light rounded p-4 my-4">
-							<h4 class="mb-4">留下您的宝贵建议</h4>
-							<form action="#">
-								<div class="row g-4">
-									<div class="col-lg-6">
-										<input type="text" class="form-control py-3" placeholder="全名">
-									</div>
-									<div class="col-lg-6">
-										<input type="email" class="form-control py-3" placeholder="电子邮件地址">
-									</div>
-									<div class="col-12">
-										<textarea class="form-control" name="textarea" id="" cols="30" rows="7"
-											placeholder="在此处写下您的建议"></textarea>
-									</div>
-									<div class="col-12">
-										<button class="form-control btn btn-primary py-3" type="button">立即提交</button>
-									</div>
+						<hr class="my-3">
+						
+						<!-- 注册 -->
+						<div class="container text-center">
+
+							<main class="row justify-content-center">
+								<div class="col-md-7 col-lg-8">
+									<h4 class="mb-3 text-center">注册信息</h4>
+									<form class="needs-validation" novalidate>
+										<div class="row g-3">
+											<div class="col-sm-6">
+												<label for="username" class="form-label">姓名</label>
+												<input type="text" class="form-control" id="username" placeholder=""
+													value="" required>
+												<div class="invalid-feedback">
+													请填写姓名
+												</div>
+											</div>
+
+											<div class="col-sm-6">
+												<label for="phone" class="form-label">手机号码</label>
+												<input type="text" class="form-control" id="phone" placeholder=""
+													value="" required>
+												<div class="invalid-feedback">
+													请填写手机号码
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<label for="province" class="form-label">省份</label>
+												<select class="form-select" id="province" required>
+													<option value="">--请选择--</option>
+													<option>黑龙江省</option>
+													<!-- 其他省份选项 -->
+												</select>
+												<div class="invalid-feedback">
+													请选择省份
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<label for="city" class="form-label">城市</label>
+												<select class="form-select" id="city" required>
+													<option value="">--请选择--</option>
+													<option>哈尔滨市</option>
+													<!-- 其他城市选项 -->
+												</select>
+												<div class="invalid-feedback">
+													请选择城市
+												</div>
+											</div>
+
+											<div class="col-md-4">
+												<label for="district" class="form-label">地区</label>
+												<select class="form-select" id="district" required>
+													<option value="">--请选择--</option>
+													<option>南岗区</option>
+													<!-- 其他地区选项 -->
+												</select>
+												<div class="invalid-feedback">
+													请选择地区
+												</div>
+											</div>
+
+											<div class="col-12">
+												<label for="address" class="form-label">详细地址</label>
+												<input type="text" class="form-control" id="address" placeholder=""
+													required>
+												<div class="invalid-feedback">
+													请填写详细地址
+												</div>
+											</div>
+										</div>
+										<div class="form-check mt-4">
+											<input type="checkbox" style="text-align: left;" id="save-info">
+											<label class="form-check-label" for="save-info">记住这些选项</label>
+										</div>
 								</div>
-							</form>
+
+								<hr class="my-3">
+
+								<button class="w-50 btn btn-primary btn-lg" type="submit">提交订单</button>
+								<script>
+									// 当文档加载完成后执行以下的函数  
+									$(function() {
+
+										// 绑定 'submit' 事件到所有的 'form' 元素上  
+										// 当表单尝试提交时，这个函数会被调用  
+										$('form').bind('submit', function() {
+
+											// 获取当前触发事件的表单元素的jQuery对象，并存储在变量$this中  
+											let $this = $(this);
+
+											// 使用HTML5的表单验证功能检查表单的有效性  
+											// 如果表单无效（即包含错误），则checkValidity()方法返回false  
+											if (!$this[0].checkValidity()) {
+
+												// 如果表单无效，给表单添加 'was-validated' 类  
+												// 这个类通常用于CSS中，以显示表单字段的错误状态或样式  
+												$this.addClass('was-validated');
+
+												// 阻止表单的默认提交行为  
+												// 也就是说，表单不会发送到服务器进行处理  
+												// 这通常用于在前端先处理表单数据或显示错误信息  
+												return false;
+											}
+										});
+									});
+								</script>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- 单一产品端 -->
+			<!-- 单一产品端 -->
 
 
-		<!-- 页脚开始 -->
-		<div class="container-fluid bg-dark footer py-2  "> <!-- d-none d-lg-block -->
-			<div class="container py-2">
-				<div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
-					<div class="row g-4">
-						<div class="col-lg-3">
-							<a href="#" class="d-flex flex-column flex-wrap">
-								<p class="text-white mb-0  py-2">黑龙江农业工程职业学院</p>
-								<small class="text-light py-2"
-									style="letter-spacing: 11px; line-height: 0;">信息工程学院</small>
-							</a>
-						</div>
-						<div class="col-lg-9  py-2">
-							<div class="d-flex position-relative rounded-pill overflow-hidden">
-								<input class="form-control border-0 w-100 py-3 rounded-pill" type="email"
-									placeholder="计算机网络技术22-6班">
-								<button type="submit"
-									class="btn btn-primary border-0 py-3 px-5 rounded-pill text-white position-absolute"
-									style="top: 0; right: 0;">立即搜索</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row g-5">
-					<div class="col-lg-6 col-xl-3">
-						<div class="footer-item-1">
-							<h4 class="mb-4 text-white">与我联系</h4>
-							<p class="text-secondary line-h">地址： <span class="text-white">哈尔滨市哈双路348号</span></p>
-							<p class="text-secondary line-h">Email: <span class="text-white">206****07744@126.com</span>
-							</p>
-							<p class="text-secondary line-h">电话： <span class="text-white">138*****627</span></p>
-							<div class="d-flex line-h">
-								<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
-										class="bi bi-emoji-wink-fill"></i></a>
-								<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
-										class="bi bi-wechat"></i></a>
-								<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
-										class="bi bi-tencent-qq"></i></a>
-								<a class="btn btn-light btn-md-square rounded-circle" href=""><i
-										class="bi bi-tiktok"></i></a>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-6 col-xl-3">
-						<div class="footer-item-2">
-							<div class="d-flex flex-column mb-4">
-								<h4 class="mb-4 text-white">团队成员</h4>
-								<a href="#">
-									<div class="d-flex align-items-center">
-										<div class="rounded-circle border border-2 border-primary overflow-hidden">
-											<img src="img/footer-1.jpg" class="img-zoomin  rounded-circle w-100" alt="">
-										</div>
-										<div class="d-flex flex-column ps-4">
-											<p class="text-uppercase text-white mb-3">站长</p>
-											<a href="#" class="h6 text-white">
-												负责网站的整体发展
-											</a>
-											<small class="text-white d-block"><i
-													class="bi bi-emoji-smile-fill"></i>让努力成为一种习惯!</small>
-										</div>
-									</div>
+			<!-- 页脚开始 -->
+			<div class="container-fluid bg-dark footer py-2  "> <!-- d-none d-lg-block -->
+				<div class="container py-2">
+					<div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+						<div class="row g-4">
+							<div class="col-lg-3">
+								<a href="#" class="d-flex flex-column flex-wrap">
+									<p class="text-white mb-0  py-2">黑龙江农业工程职业学院</p>
+									<small class="text-light py-2"
+										style="letter-spacing: 11px; line-height: 0;">信息工程学院</small>
 								</a>
 							</div>
-							<div class="d-flex flex-column">
-								<a href="#">
-									<div class="d-flex align-items-center">
-										<div class="rounded-circle border border-2 border-primary overflow-hidden">
-											<img src="img/footer-2.jpg" class="img-zoomin rounded-circle w-100" alt="">
-										</div>
-										<div class="d-flex flex-column ps-4">
-											<p class="text-uppercase text-white mb-3">管理员</p>
-											<a href="#" class="h6 text-white">
-												负责网站的维护与更新
-											</a>
-											<small class="text-white d-block"><i
-													class="bi bi-emoji-sunglasses-fill"></i>
-												越努力越幸运！</small>
-										</div>
-									</div>
-								</a>
+							<div class="col-lg-9  py-2">
+								<div class="d-flex position-relative rounded-pill overflow-hidden">
+									<input class="form-control border-0 w-100 py-3 rounded-pill" type="email"
+										placeholder="计算机网络技术22-6班">
+									<button type="submit"
+										class="btn btn-primary border-0 py-3 px-5 rounded-pill text-white position-absolute"
+										style="top: 0; right: 0;">立即搜索</button>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-6 col-xl-3">
-						<div class="d-flex flex-column text-start footer-item-3">
-							<h4 class="mb-4 text-white">友情链接</h4>
-							<a class="btn-link text-white" href="http://www.xinhuanet.com/"><i
-									class="fas fa-angle-right text-white me-2"></i>
-								新华社</a>
-							<a class="btn-link text-white" href="http://www.people.com.cn/"><i
-									class="fas fa-angle-right text-white me-2"></i>
-								人民日报</a>
-							<a class="btn-link text-white"
-								href="https://www.xuexi.cn/xxqg.html?id=3cba33e067d64ded8a1a503f0774675c"><i
-									class="fas fa-angle-right text-white me-2"></i>
-								学习强国</a>
-							<a class="btn-link text-white" href="https://www.ccps.gov.cn/"><i
-									class="fas fa-angle-right text-white me-2"></i>
-								中央党校</a>
-							<a class="btn-link text-white" href="https://www.huanqiu.com/"><i
-									class="fas fa-angle-right text-white me-2"></i>
-								环球时报</a>
-							<a class="btn-link text-white" href="https://v.ifeng.com/"><i
-									class="fas fa-angle-right text-white me-2"></i>
-								凤凰军事</a>
+					<div class="row g-5">
+						<div class="col-lg-6 col-xl-3">
+							<div class="footer-item-1">
+								<h4 class="mb-4 text-white">与我联系</h4>
+								<p class="text-secondary line-h">地址： <span class="text-white">哈尔滨市哈双路348号</span></p>
+								<p class="text-secondary line-h">Email: <span
+										class="text-white">206****07744@126.com</span>
+								</p>
+								<p class="text-secondary line-h">电话： <span class="text-white">138*****627</span></p>
+								<div class="d-flex line-h">
+									<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+											class="bi bi-emoji-wink-fill"></i></a>
+									<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+											class="bi bi-wechat"></i></a>
+									<a class="btn btn-light me-2 btn-md-square rounded-circle" href=""><i
+											class="bi bi-tencent-qq"></i></a>
+									<a class="btn btn-light btn-md-square rounded-circle" href=""><i
+											class="bi bi-tiktok"></i></a>
+								</div>
+							</div>
 						</div>
-					</div>
+						<div class="col-lg-6 col-xl-3">
+							<div class="footer-item-2">
+								<div class="d-flex flex-column mb-4">
+									<h4 class="mb-4 text-white">团队成员</h4>
+									<a href="#">
+										<div class="d-flex align-items-center">
+											<div class="rounded-circle border border-2 border-primary overflow-hidden">
+												<img src="img/footer-1.jpg" class="img-zoomin  rounded-circle w-100"
+													alt="">
+											</div>
+											<div class="d-flex flex-column ps-4">
+												<p class="text-uppercase text-white mb-3">站长</p>
+												<a href="#" class="h6 text-white">
+													负责网站的整体发展
+												</a>
+												<small class="text-white d-block"><i
+														class="bi bi-emoji-smile-fill"></i>让努力成为一种习惯!</small>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="d-flex flex-column">
+									<a href="#">
+										<div class="d-flex align-items-center">
+											<div class="rounded-circle border border-2 border-primary overflow-hidden">
+												<img src="img/footer-2.jpg" class="img-zoomin rounded-circle w-100"
+													alt="">
+											</div>
+											<div class="d-flex flex-column ps-4">
+												<p class="text-uppercase text-white mb-3">管理员</p>
+												<a href="#" class="h6 text-white">
+													负责网站的维护与更新
+												</a>
+												<small class="text-white d-block"><i
+														class="bi bi-emoji-sunglasses-fill"></i>
+													越努力越幸运！</small>
+											</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-xl-3">
+							<div class="d-flex flex-column text-start footer-item-3">
+								<h4 class="mb-4 text-white">友情链接</h4>
+								<a class="btn-link text-white" href="http://www.xinhuanet.com/"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									新华社</a>
+								<a class="btn-link text-white" href="http://www.people.com.cn/"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									人民日报</a>
+								<a class="btn-link text-white"
+									href="https://www.xuexi.cn/xxqg.html?id=3cba33e067d64ded8a1a503f0774675c"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									学习强国</a>
+								<a class="btn-link text-white" href="https://www.ccps.gov.cn/"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									中央党校</a>
+								<a class="btn-link text-white" href="https://www.huanqiu.com/"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									环球时报</a>
+								<a class="btn-link text-white" href="https://v.ifeng.com/"><i
+										class="fas fa-angle-right text-white me-2"></i>
+									凤凰军事</a>
+							</div>
+						</div>
 
-					<div class="col-lg-6 col-xl-3">
-						<div class="footer-item-4">
-							<h4 class="mb-4 text-white">时光记忆</h4>
-							<div class="row g-2">
-								<div class="col-4">
-									<div class="rounded overflow-hidden">
-										<img src="img/sy/2 (6).jpg" class="img-zoomin  rounded w-100" alt="">
+						<div class="col-lg-6 col-xl-3">
+							<div class="footer-item-4">
+								<h4 class="mb-4 text-white">时光记忆</h4>
+								<div class="row g-2">
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (6).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
 									</div>
-								</div>
-								<div class="col-4">
-									<div class="rounded overflow-hidden">
-										<img src="img/sy/2 (4).jpg" class="img-zoomin  rounded w-100" alt="">
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (4).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
 									</div>
-								</div>
-								<div class="col-4">
-									<div class="rounded overflow-hidden">
-										<img src="img/sy/2 (7).jpg" class="img-zoomin  rounded w-100" alt="">
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (7).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
 									</div>
-								</div>
-								<div class="col-4">
-									<div class="rounded overflow-hidden">
-										<img src="img/sy/2 (13).jpg" class="img-zoomin  rounded w-100" alt="">
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (13).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
 									</div>
-								</div>
-								<div class="col-4">
-									<div class="rounded overflow-hidden">
-										<img src="img/sy/2 (15).jpg" class="img-zoomin  rounded w-100" alt="">
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (15).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
 									</div>
-								</div>
-								<div class="col-4">
-									<div class="rounded overflow-hidden">
-										<img src="img/sy/2 (17).jpg" class="img-zoomin  rounded w-100" alt="">
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (17).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
 									</div>
-								</div>
-								<div class="col-4">
-									<div class="rounded overflow-hidden">
-										<img src="img/sy/2 (14).jpg" class="img-zoomin  rounded w-100" alt="">
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (14).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
 									</div>
-								</div>
-								<div class="col-4">
-									<div class="rounded overflow-hidden">
-										<img src="img/sy/2 (9).jpg" class="img-zoomin  rounded w-100" alt="">
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (9).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
 									</div>
-								</div>
-								<div class="col-4">
-									<div class="rounded overflow-hidden">
-										<img src="img/sy/2 (18).jpg" class="img-zoomin  rounded w-100" alt="">
+									<div class="col-4">
+										<div class="rounded overflow-hidden">
+											<img src="img/sy/2 (18).jpg" class="img-zoomin  rounded w-100" alt="">
+										</div>
 									</div>
-								</div>
 
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Footer End -->
+			<!-- Footer End -->
 
 
-		<!-- Copyright Start -->
-		<div class="container-fluid copyright bg-dark py-3">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 text-center text-md-start mb-1 mb-md-0">
-						<span class="text-light"><i class="fas fa-copyright text-light me-2"></i>明日世界窗,
-							All right reserved.</span>
+			<!-- Copyright Start -->
+			<div class="container-fluid copyright bg-dark py-3">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 text-center text-md-start mb-1 mb-md-0">
+							<span class="text-light"><i class="fas fa-copyright text-light me-2"></i>明日世界窗,
+								All right reserved.</span>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<!-- Copyright End -->
-		<!-- Back to Top -->
-		<a href="#" class="btn btn-primary border-2 border-white rounded-circle back-to-top"><i
-				class="fa fa-arrow-up"></i></a>
-		<!-- JavaScript Libraries -->
-		<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
-		<script src="lib/easing/easing.min.js"></script>
-		<script src="lib/waypoints/waypoints.min.js"></script>
-		<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-		<!-- Template Javascript -->
-		<script src="js/main.js"></script>
-		<script src="js/x.js"></script>
+			<!-- Copyright End -->
+			<!-- Back to Top -->
+			<a href="#" class="btn btn-primary border-2 border-white rounded-circle back-to-top"><i
+					class="fa fa-arrow-up"></i></a>
+			<!-- JavaScript Libraries -->
+			<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
+			<script src="lib/easing/easing.min.js"></script>
+			<script src="lib/waypoints/waypoints.min.js"></script>
+			<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+			<!-- Template Javascript -->
+			<script src="js/main.js"></script>
+			<script src="js/x.js"></script>
 	</body>
 
 </html>
