@@ -27,6 +27,7 @@
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<link rel="shortcut icon" href="img/tx.jpg" type="image/x-icon">
 		<style>
+			
 			#largeImg {
 				border: solid 1px #ccc;
 				width: 40%;
@@ -45,23 +46,10 @@
 				border-color: #FF9900;
 			}
 		</style>
-		<link rel="stylesheet" href="css/yp.css" />
-		<script src="js/yp.js"></script>
 	</head>
 
 	<body>
-		<!-- 隐藏音频播放控件 -->
-		<audio id="audioPlayer" style="display:none;">
-			<source src="yp1.mp3" type="audio/mpeg">
-			您的浏览器不支持 audio 元素。
-		</audio>
 
-		<!-- 使用Bootstrap按钮样式，并将其定位到屏幕的右下方 -->
-		<div class="audio-controls">
-			<button class="btn btn-primary" onclick="togglePlay()">
-				<i class="bi bi-file-earmark-music"></i>
-			</button>
-		</div>
 		<!-- Spinner Start -->
 		<div id="spinner"
 			class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
