@@ -25,11 +25,23 @@
 		<!-- 模板样式表 -->
 		<link href="css/style.css" rel="stylesheet">
 		<link rel="shortcut icon" href="img/tx.jpg" type="image/x-icon">
-		
+		<link rel="stylesheet" href="css/yp.css" />
+		<script src="js/yp.js"></script>
 	</head>
 
 	<body>
+		<!-- 隐藏音频播放控件 -->
+		<audio id="audioPlayer" style="display:none;">
+			<source src="yp1.mp3" type="audio/mpeg">
+			您的浏览器不支持 audio 元素。
+		</audio>
 
+		<!-- 使用Bootstrap按钮样式，并将其定位到屏幕的右下方 -->
+		<div class="audio-controls">
+			<button class="btn btn-primary" onclick="togglePlay()">
+				<i class="bi bi-file-earmark-music"></i>
+			</button>
+		</div>
 		<!-- Spinner Start -->
 		<div id="spinner"
 			class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
@@ -91,7 +103,8 @@
 								<a href="beijing.html" class="nav-item nav-link">首都北京</a>
 								<a href="liaoning.html" class="nav-item nav-link">多彩辽宁</a>
 								<div class="nav-item dropdown">
-									<a href="qxlc.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">求学历程</a>
+									<a href="qxlc.html" class="nav-link dropdown-toggle"
+										data-bs-toggle="dropdown">求学历程</a>
 									<div class="dropdown-menu m-0 bg-secondary rounded-0">
 										<!-- <a href="#" class="dropdown-item">高中阶段</a> -->
 										<a href="qxlc.html" class="dropdown-item">大学阶段</a>
@@ -161,13 +174,13 @@
 									</div>
 								</div>
 								<div class="position-relative rounded overflow-hidden py-3">
-								  <img src="img/jw.jpg" class="rounded w-100 img-zoomin" alt="">
+									<img src="img/jw.jpg" class="rounded w-100 img-zoomin" alt="">
 								</div>
 								<div class="position-relative rounded overflow-hidden py-1">
-								  <img src="img/gg1.jpg" class="rounded w-100 img-zoomin" alt="">
+									<img src="img/gg1.jpg" class="rounded w-100 img-zoomin" alt="">
 								</div>
 								<div class="position-relative rounded overflow-hidden py-1">
-								  <img src="img/xgg.jpg" class="rounded w-100 img-zoomin" alt="">
+									<img src="img/xgg.jpg" class="rounded w-100 img-zoomin" alt="">
 								</div>
 							</div>
 						</div>
@@ -258,7 +271,7 @@
 								</div>
 
 
-							
+
 
 								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
 									<div class="card">
@@ -305,7 +318,7 @@
 										</div>
 									</div>
 								</div>
-								
+
 								<div class="col-sm-6 col-lg-3 mb-3 img-zoomin">
 									<div class="card">
 										<img src="img/heb/1 (6).jpg" class="card-img-top" alt="...">
@@ -550,7 +563,7 @@
 		<script src="js/main.js"></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 		<script src="js/x.js"></script>
-	
+
 	</body>
 
 </html>
