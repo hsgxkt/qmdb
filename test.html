@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Login Page</title>
+		<script>
+			function validateLogin() {
+				var username = document.getElementsByName('username')[0].value;
+				var password = document.getElementsByName('password')[0].value;
+				var verifyCode = document.getElementsByName('verify_code')[0].value;
+
+				if (username === 'aabbccdd' && password === 'aabbccdd' && verifyCode === '8888') {
+					window.location.href = 'https://hsgxkt.github.io/qmdb/';
+				} else {
+					alert('登录失败，请检查您的用户名、密码或验证码是否正确。');
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<center>
+			<h1>登录</h1>
+
+			<form>
+				<label for="username">用户名:</label>
+				<input type="text" id="username" name="username" required><br><br>
+
+				<label for="password">密码:</label>
+				<input type="password" id="password" name="password" required><br><br>
+
+				<label for="verify_code">验证码:</label>
+				<input type="text" id="verify_code" name="verify_code" required><br><br>
+
+				<input type="button" value="登录" onclick="validateLogin()">
+			</form>
+		</center>
+	</body>
+</html>
